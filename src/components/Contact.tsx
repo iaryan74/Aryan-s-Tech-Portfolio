@@ -102,7 +102,7 @@ const Contact = () => {
 
             <div className="mt-8 flex items-center gap-3 text-muted-foreground">
               <MapPin size={18} />
-              <span>Punjab, India</span>
+              <span>Jalandhar, Punjab, India</span>
             </div>
           </div>
 

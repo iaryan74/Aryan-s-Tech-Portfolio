@@ -9,6 +9,7 @@ const projects = [
       "A secure MERN-based note-taking application with authentication, data storage, and responsive UI for seamless cross-device experience.",
     techStack: ["MongoDB", "Express.js", "React", "Node.js"],
     color: "from-primary to-accent",
+    githubUrl: "https://github.com/iaryan74/NoteSphere",
   },
   {
     title: "Marriage Patterns Analysis",
@@ -18,6 +19,7 @@ const projects = [
       "Interactive Excel dashboard for analyzing marriage patterns and marital outcomes using Pivot Tables, Charts, Slicers, and Conditional Formatting.",
     techStack: ["Excel", "Data Analysis", "Visualization"],
     color: "from-secondary to-orange-400",
+    githubUrl: "https://github.com/iaryan74/Election-Data-Analysis",
   },
 ];
 
@@ -69,10 +71,15 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a 
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <Github size={18} />
                     View Code
-                  </button>
+                  </a>
                   <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                     <ExternalLink size={18} />
                     Live Demo

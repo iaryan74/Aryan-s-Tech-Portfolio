@@ -30,19 +30,19 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+            <p className="text-xl text-foreground/80 mb-6 leading-relaxed">
               I'm a tech-driven problem solver currently pursuing my B.Tech in
               Computer Science Engineering at Lovely Professional University. My
               journey in tech has been fueled by curiosity and a desire to build
               solutions that make a real impact.
             </p>
-            <p className="text-foreground/70 mb-6 leading-relaxed">
+            <p className="text-lg text-foreground/70 mb-6 leading-relaxed">
               With hands-on experience in data analysis, full-stack development,
               and competitive programming, I approach every project with an
               analytical mindset and adaptability. I'm passionate about machine
               learning, product development, and entrepreneurship.
             </p>
-            <p className="text-foreground/70 mb-8 leading-relaxed">
+            <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
               When I'm not coding, you'll find me exploring new technologies,
               solving competitive programming challenges, or brainstorming
               startup ideas.
@@ -95,7 +95,7 @@ const About = () => {
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="text-center p-4 bg-card rounded-xl shadow-card border border-border">
                 <p className="font-display text-3xl font-bold text-primary">
-                  10+
+                  2+
                 </p>
                 <p className="text-sm text-muted-foreground">Projects</p>
               </div>
@@ -107,7 +107,7 @@ const About = () => {
               </div>
               <div className="text-center p-4 bg-card rounded-xl shadow-card border border-border">
                 <p className="font-display text-3xl font-bold text-primary">
-                  500+
+                  100+
                 </p>
                 <p className="text-sm text-muted-foreground">Problems</p>
               </div>

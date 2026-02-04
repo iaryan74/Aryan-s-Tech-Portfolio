@@ -99,7 +99,7 @@ const Hero = () => {
             </div>
 
             <p className="text-primary font-medium mb-4 animate-fade-up animation-delay-200">
-              Hello, I'm
+              Greetings, I'm
             </p>
             
             <h1 className="heading-xl mb-4 animate-fade-up animation-delay-200">

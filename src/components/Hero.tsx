@@ -132,7 +132,7 @@ const Hero = () => {
             </div>
 
             <p className="text-foreground/70 mb-8 max-w-lg animate-fade-up animation-delay-600 text-lg leading-relaxed">
-              A passionate CS student turning ideas and data into scalable,
+              A passionate Computer Science student turning ideas and data into scalable,
               impactful solutions. Experienced in data analysis, full-stack
               development, and competitive programming.
             </p>

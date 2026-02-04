@@ -30,7 +30,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
-            <p className="text-xl text-foreground/80 mb-6 leading-relaxed">
+            <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
               I'm a tech-driven problem solver currently pursuing my B.Tech in
               Computer Science Engineering at Lovely Professional University. My
               journey in tech has been fueled by curiosity and a desire to build

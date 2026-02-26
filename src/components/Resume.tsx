@@ -16,7 +16,7 @@ const Resume = () => {
             </div>
             
             <h3 className="font-display font-semibold text-xl mb-4">
-              Aryan Sudhanshu - Resume
+              Md Nayeem Akhtar - Resume
             </h3>
             
             <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -25,7 +25,7 @@ const Resume = () => {
 
             <a
               href="/Aryan_CV.pdf"
-              download="Aryan_Sudhanshu_Resume.pdf"
+              download="Md_Nayeem_Akhtar_Resume.pdf"
               className="btn-primary inline-flex items-center gap-2"
             >
               <Download size={20} />

@@ -155,7 +155,7 @@ const Hero = () => {
               <div className="h-px flex-1 max-w-20 bg-border" />
               <div className="flex gap-3">
                 <a
-                  href="https://www.linkedin.com/in/aryan-sudhanshu/"
+                  href="https://www.linkedin.com/in/nayeem-akhtar/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-card border border-border shadow-card hover:shadow-elevated hover:border-primary hover:-translate-y-1 transition-all duration-300"
@@ -163,7 +163,7 @@ const Hero = () => {
                   <Linkedin size={20} className="text-muted-foreground hover:text-primary" />
                 </a>
                 <a
-                  href="https://github.com/iaryan74"
+                  href="https://github.com/nayeem75"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-card border border-border shadow-card hover:shadow-elevated hover:border-primary hover:-translate-y-1 transition-all duration-300"
@@ -171,7 +171,7 @@ const Hero = () => {
                   <Github size={20} className="text-muted-foreground hover:text-primary" />
                 </a>
                 <a
-                  href="mailto:sudhanshuaryan7749@gmail.com"
+                  href="mailto:nayeemakhtar@gmail.com"
                   className="p-3 rounded-xl bg-card border border-border shadow-card hover:shadow-elevated hover:border-primary hover:-translate-y-1 transition-all duration-300"
                 >
                   <Mail size={20} className="text-muted-foreground hover:text-primary" />

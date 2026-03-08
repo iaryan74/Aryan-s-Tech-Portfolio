@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import profileImage from "@/assets/aryan-profile.jpg";
 
 const roles = [
@@ -41,35 +41,33 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center section-padding pt-28 relative overflow-hidden noise-overlay"
+      className="min-h-screen flex items-center section-padding pt-28 relative overflow-hidden"
     >
-      {/* Ambient gradient orbs */}
+      {/* Subtle warm gradient bg */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[300px] -right-[200px] w-[700px] h-[700px] rounded-full bg-primary/15 blur-[120px] animate-blob" />
-        <div className="absolute -bottom-[300px] -left-[200px] w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[120px] animate-blob animation-delay-400" />
-        <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[100px] animate-pulse" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[100px]" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Content */}
           <div className="order-2 lg:order-1">
-            {/* Status badge */}
             <div className="section-label animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <span>Available for opportunities</span>
             </div>
 
-            <p className="text-muted-foreground font-medium mb-3 animate-fade-up animation-delay-200 text-sm tracking-wide uppercase">
-              Greetings, I'm
+            <p className="text-muted-foreground font-medium mb-3 animate-fade-up animation-delay-200 text-sm tracking-widest uppercase">
+              Hello, I'm
             </p>
-            
+
             <h1 className="heading-xl mb-4 animate-fade-up animation-delay-200">
               Aryan{" "}
               <span className="text-gradient">Sudhanshu</span>
             </h1>
 
-            {/* Typing effect */}
+            {/* Typing */}
             <div className="h-10 mb-8 animate-fade-up animation-delay-400">
               <p className="text-lg sm:text-xl font-medium text-muted-foreground">
                 <span className="text-primary font-semibold">{displayText}</span>
@@ -83,7 +81,7 @@ const Hero = () => {
               development, and competitive programming.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTAs */}
             <div className="flex flex-wrap gap-3 mb-12 animate-fade-up animation-delay-600">
               <a href="#projects" className="btn-primary group">
                 <span>View Projects</span>
@@ -91,77 +89,64 @@ const Hero = () => {
               </a>
               <a href="#contact" className="btn-outline group">
                 <span>Contact Me</span>
-                <Mail size={16} className="group-hover:scale-110 transition-transform" />
+                <Mail size={16} />
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4 animate-fade-up animation-delay-600">
-              <div className="flex gap-2">
+            {/* Social */}
+            <div className="flex gap-3 animate-fade-up animation-delay-600">
+              {[
+                { href: "https://www.linkedin.com/in/aryan-sudhanshu/", icon: Linkedin },
+                { href: "https://github.com/iaryan74", icon: Github },
+                { href: "mailto:sudhanshuaryan7749@gmail.com", icon: Mail },
+              ].map(({ href, icon: Icon }) => (
                 <a
-                  href="https://www.linkedin.com/in/aryan-sudhanshu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-muted/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-300"
+                  key={href}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="p-3 rounded-full bg-secondary border border-border hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <Linkedin size={18} className="text-muted-foreground" />
+                  <Icon size={18} className="text-muted-foreground" />
                 </a>
-                <a
-                  href="https://github.com/iaryan74"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-muted/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  <Github size={18} className="text-muted-foreground" />
-                </a>
-                <a
-                  href="mailto:sudhanshuaryan7749@gmail.com"
-                  className="p-2.5 rounded-xl bg-muted/50 border border-border/50 hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  <Mail size={18} className="text-muted-foreground" />
-                </a>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Profile Image */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in">
             <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 blur-2xl opacity-60" />
-              
-              {/* Main image */}
-              <div className="relative w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-96 rounded-3xl overflow-hidden shadow-elevated border border-border/50">
+              <div className="relative w-72 h-80 sm:w-80 sm:h-[22rem] lg:w-[22rem] lg:h-[26rem] rounded-3xl overflow-hidden border-2 border-border">
                 <img
                   src={profileImage}
                   alt="Aryan Sudhanshu"
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
               </div>
 
-              {/* Floating badge - Experience */}
-              <div className="absolute -bottom-3 -left-3 glass-card shadow-elevated p-3 animate-float z-20">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-primary text-primary-foreground">
-                    <Sparkles size={16} />
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-2xl p-4 shadow-lg animate-float z-20">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-primary text-primary-foreground">
+                    <span className="text-sm font-bold">2+</span>
                   </div>
                   <div>
-                    <p className="font-display text-lg font-bold text-foreground leading-none">2+</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Years Building</p>
+                    <p className="font-display text-sm font-bold text-foreground">Years</p>
+                    <p className="text-xs text-muted-foreground">Building</p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating badge - Projects */}
-              <div className="absolute -top-2 -right-3 glass-card shadow-elevated p-3 animate-float animation-delay-200 z-20">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-secondary text-secondary-foreground">
-                    <Sparkles size={16} />
+              {/* Floating badge 2 */}
+              <div className="absolute -top-3 -right-3 bg-card border border-border rounded-2xl p-4 shadow-lg animate-float animation-delay-200 z-20">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-accent text-accent-foreground">
+                    <span className="text-sm font-bold">2+</span>
                   </div>
                   <div>
-                    <p className="font-display text-lg font-bold text-foreground leading-none">2+</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Projects</p>
+                    <p className="font-display text-sm font-bold text-foreground">Projects</p>
+                    <p className="text-xs text-muted-foreground">Completed</p>
                   </div>
                 </div>
               </div>

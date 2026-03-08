@@ -37,23 +37,18 @@ const Experience = () => {
         </div>
 
         <div className="max-w-3xl mx-auto space-y-6">
-          {experiences.map((exp, index) => (
-            <div
-              key={exp.title}
-              className="glass-card p-6 shadow-card card-hover relative"
-            >
-              {/* Accent line */}
-              <div className="absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary to-accent rounded-full" />
-              
-              <div className="pl-4">
+          {experiences.map((exp) => (
+            <div key={exp.title} className="glass-card p-6 card-hover relative overflow-hidden">
+              {/* Left accent */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-accent rounded-full" />
+
+              <div className="pl-5">
                 <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
                   <div>
-                    <h3 className="font-display font-semibold text-lg">
-                      {exp.title}
-                    </h3>
+                    <h3 className="font-display font-semibold text-lg">{exp.title}</h3>
                     <p className="text-primary font-medium text-sm">{exp.company}</p>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full">
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-secondary px-3 py-1.5 rounded-full">
                     <Calendar size={12} />
                     {exp.period}
                   </div>
@@ -61,24 +56,16 @@ const Experience = () => {
 
                 <ul className="space-y-2 mb-4">
                   {exp.description.map((item, i) => (
-                    <li
-                      key={i}
-                      className="text-muted-foreground text-sm flex items-start gap-2"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                    <li key={i} className="text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {exp.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 text-xs rounded-md bg-secondary/10 text-secondary font-medium"
-                    >
-                      {tech}
-                    </span>
+                    <span key={tech} className="skill-tag">{tech}</span>
                   ))}
                 </div>
               </div>

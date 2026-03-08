@@ -19,6 +19,16 @@ const projects = [
       "Interactive Excel dashboard for analyzing marriage patterns and marital outcomes using Pivot Tables, Charts, Slicers, and Conditional Formatting.",
     techStack: ["Excel", "Data Analysis", "Visualization"],
     color: "from-secondary to-orange-400",
+    githubUrl: "https://github.com/iaryan74/Marriage-Patterns-Analysis",
+  },
+  {
+    title: "Election Data Analysis",
+    subtitle: "Data Analysis & Visualization",
+    date: "April 2025",
+    description:
+      "In-depth analysis of a synthetic Indian election dataset to uncover insights about voter behavior, party performance, and regional election outcomes using Python.",
+    techStack: ["Python", "Data Analysis", "CSV", "Visualization"],
+    color: "from-emerald-500 to-teal-600",
     githubUrl: "https://github.com/iaryan74/Election-Data-Analysis",
   },
 ];

@@ -14,7 +14,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://www.linkedin.com/in/nayeem-akhtar/"
+              href="https://www.linkedin.com/in/aryan-sudhanshu/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-all"
@@ -23,7 +23,7 @@ const Footer = () => {
               <Linkedin size={18} />
             </a>
             <a
-              href="https://github.com/nayeem75"
+              href="https://github.com/iaryan74"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-all"
@@ -32,7 +32,7 @@ const Footer = () => {
               <Github size={18} />
             </a>
             <a
-              href="mailto:nayeemakhtar@gmail.com"
+              href="mailto:sudhanshuaryan7749@gmail.com"
               className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-muted transition-all"
               aria-label="Email"
             >

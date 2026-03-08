@@ -6,8 +6,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "nayeemakhtar@gmail.com",
-    href: "mailto:nayeemakhtar@gmail.com",
+    value: "sudhanshuaryan7749@gmail.com",
+    href: "mailto:sudhanshuaryan7749@gmail.com",
   },
   {
     icon: Phone,
@@ -18,14 +18,14 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "nayeem-akhtar",
-    href: "https://www.linkedin.com/in/nayeem-akhtar/",
+    value: "aryan-sudhanshu",
+    href: "https://www.linkedin.com/in/aryan-sudhanshu/",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "nayeem75",
-    href: "https://github.com/nayeem75",
+    value: "iaryan74",
+    href: "https://github.com/iaryan74",
   },
 ];
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import profileImage from "@/assets/aryan-profile.jpg";
 
 const roles = [
@@ -41,125 +41,82 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center section-padding pt-28 relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-hidden pt-24 pb-16 px-5 sm:px-8 lg:px-12"
     >
-      {/* Subtle warm gradient bg */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[100px]" />
+      {/* Warm gradient background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-accent/8 blur-[150px]" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[120px]" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          {/* Content */}
-          <div className="order-2 lg:order-1">
-            <div className="section-label animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span>Available for opportunities</span>
-            </div>
+        {/* Top section with greeting and image */}
+        <div className="relative flex flex-col items-center text-center mb-8">
+          {/* Script greeting */}
+          <p className="font-display italic text-3xl sm:text-4xl lg:text-5xl text-foreground/70 mb-6 animate-fade-up">
+            Hey, there
+          </p>
 
-            <p className="text-muted-foreground font-medium mb-3 animate-fade-up animation-delay-200 text-sm tracking-widest uppercase">
-              Hello, I'm
-            </p>
-
-            <h1 className="heading-xl mb-4 animate-fade-up animation-delay-200">
-              Aryan{" "}
-              <span className="text-gradient">Sudhanshu</span>
-            </h1>
-
-            {/* Typing */}
-            <div className="h-10 mb-8 animate-fade-up animation-delay-400">
-              <p className="text-lg sm:text-xl font-medium text-muted-foreground">
-                <span className="text-primary font-semibold">{displayText}</span>
-                <span className="inline-block w-0.5 h-5 bg-primary ml-0.5 animate-pulse" />
-              </p>
-            </div>
-
-            <p className="text-muted-foreground mb-10 max-w-md animate-fade-up animation-delay-600 text-base leading-relaxed">
-              A passionate Computer Science student turning ideas and data into scalable,
-              impactful solutions. Experienced in data analysis, full-stack
-              development, and competitive programming.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-12 animate-fade-up animation-delay-600">
-              <a href="#projects" className="btn-primary group">
-                <span>View Projects</span>
-                <ArrowDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
-              </a>
-              <a href="#contact" className="btn-outline group">
-                <span>Contact Me</span>
-                <Mail size={16} />
-              </a>
-            </div>
-
-            {/* Social */}
-            <div className="flex gap-3 animate-fade-up animation-delay-600">
-              {[
-                { href: "https://www.linkedin.com/in/aryan-sudhanshu/", icon: Linkedin },
-                { href: "https://github.com/iaryan74", icon: Github },
-                { href: "mailto:sudhanshuaryan7749@gmail.com", icon: Mail },
-              ].map(({ href, icon: Icon }) => (
-                <a
-                  key={href}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="p-3 rounded-full bg-secondary border border-border hover:border-primary/50 hover:bg-primary/10 hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  <Icon size={18} className="text-muted-foreground" />
-                </a>
-              ))}
-            </div>
+          {/* Profile image - large and prominent */}
+          <div className="relative w-56 h-64 sm:w-72 sm:h-80 lg:w-80 lg:h-[22rem] rounded-3xl overflow-hidden mb-8 animate-scale-in">
+            <img
+              src={profileImage}
+              alt="Aryan Sudhanshu"
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
           </div>
 
-          {/* Profile Image */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in">
-            <div className="relative">
-              <div className="relative w-72 h-80 sm:w-80 sm:h-[22rem] lg:w-[22rem] lg:h-[26rem] rounded-3xl overflow-hidden border-2 border-border">
-                <img
-                  src={profileImage}
-                  alt="Aryan Sudhanshu"
-                  className="w-full h-full object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
-              </div>
+          {/* Available badge */}
+          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-card border border-border mb-10 animate-fade-up animation-delay-200">
+            <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
+            <span className="font-sans text-sm font-medium text-foreground">Available for new opportunities</span>
+          </div>
+        </div>
 
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-2xl p-4 shadow-lg animate-float z-20">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-primary text-primary-foreground">
-                    <span className="text-sm font-bold">2+</span>
-                  </div>
-                  <div>
-                    <p className="font-display text-sm font-bold text-foreground">Years</p>
-                    <p className="text-xs text-muted-foreground">Building</p>
-                  </div>
-                </div>
-              </div>
+        {/* Big bold name */}
+        <div className="text-center animate-fade-up animation-delay-400">
+          <h1 className="heading-xl mb-4 uppercase">
+            I Am{" "}
+            <br className="sm:hidden" />
+            <span className="text-foreground">Aryan</span>
+          </h1>
+        </div>
 
-              {/* Floating badge 2 */}
-              <div className="absolute -top-3 -right-3 bg-card border border-border rounded-2xl p-4 shadow-lg animate-float animation-delay-200 z-20">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-accent text-accent-foreground">
-                    <span className="text-sm font-bold">2+</span>
-                  </div>
-                  <div>
-                    <p className="font-display text-sm font-bold text-foreground">Projects</p>
-                    <p className="text-xs text-muted-foreground">Completed</p>
-                  </div>
-                </div>
-              </div>
+        {/* Role and description row */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mt-6 animate-fade-up animation-delay-600">
+          {/* Typing role */}
+          <div className="text-center lg:text-left">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight">
+              {displayText}
+              <span className="inline-block w-0.5 h-6 bg-accent ml-1 animate-pulse" />
+            </h2>
+          </div>
+
+          {/* Description */}
+          <p className="text-muted-foreground text-sm sm:text-base max-w-sm text-center lg:text-right leading-relaxed font-sans">
+            Specialized in Full-Stack Development, Data Analysis, and building scalable solutions.
+          </p>
+
+          {/* Stats */}
+          <div className="flex gap-10">
+            <div className="text-center">
+              <p className="font-display text-4xl sm:text-5xl font-bold text-foreground">2+</p>
+              <p className="font-sans text-xs text-muted-foreground mt-1">Projects completed</p>
+            </div>
+            <div className="text-center">
+              <p className="font-display text-4xl sm:text-5xl font-bold text-foreground">100+</p>
+              <p className="font-sans text-xs text-muted-foreground mt-1">Problems solved</p>
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2">
-          <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">Scroll</span>
-          <div className="w-5 h-8 rounded-full border border-muted-foreground/30 flex items-start justify-center p-1">
-            <div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
-          </div>
+        <div className="flex justify-center mt-16">
+          <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+            <span className="font-sans text-[10px] uppercase tracking-[0.2em]">Scroll</span>
+            <ArrowDown size={16} className="animate-bounce" />
+          </a>
         </div>
       </div>
     </section>

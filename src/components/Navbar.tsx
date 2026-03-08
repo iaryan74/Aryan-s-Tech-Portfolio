@@ -24,36 +24,32 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-lg border-b border-border py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/90 backdrop-blur-md border-b border-border py-4"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container-custom px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between">
-          <a
-            href="#home"
-            className="font-display text-xl font-bold text-foreground"
-          >
-            Aryan<span className="text-primary">.</span>
+          <a href="#home" className="font-display text-2xl font-bold text-foreground italic">
+            Aryan.
           </a>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium text-sm px-4 py-2 rounded-full hover:bg-secondary"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-sans font-medium text-sm"
               >
                 {link.name}
               </a>
             ))}
-            <a href="/Aryan_CV.pdf" download className="ml-3 btn-primary text-sm py-2.5 px-6">
-              Resume
+            <a href="#contact" className="btn-primary text-sm py-2.5 px-6">
+              Contact
             </a>
           </div>
 
-          {/* Mobile */}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setIsOpen(!isOpen)}
@@ -65,24 +61,23 @@ const Navbar = () => {
 
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col gap-1 bg-card border border-border rounded-2xl p-4">
+            <div className="flex flex-col gap-1 bg-card border border-border rounded-2xl p-5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2.5 px-4 rounded-xl hover:bg-secondary"
+                  className="text-foreground hover:text-accent transition-colors font-medium py-3 px-4 rounded-xl hover:bg-secondary"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
               <a
-                href="/Aryan_CV.pdf"
-                download
-                className="btn-primary text-center justify-center mt-2"
+                href="#contact"
+                className="btn-primary text-center justify-center mt-3"
                 onClick={() => setIsOpen(false)}
               >
-                Resume
+                Contact
               </a>
             </div>
           </div>

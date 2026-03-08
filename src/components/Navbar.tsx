@@ -37,7 +37,7 @@ const Navbar = () => {
             href="#home"
             className="font-display text-2xl font-bold text-foreground hover:text-primary transition-colors"
           >
-            Nayeem<span className="text-primary">.</span>
+            Aryan<span className="text-primary">.</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -197,7 +197,7 @@ const Hero = () => {
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[450px] rounded-3xl overflow-hidden shadow-elevated border-4 border-background">
                 <img
                   src={profileImage}
-                  alt="Md Nayeem Akhtar"
+                  alt="Aryan Sudhanshu"
                   className="w-full h-full object-cover"
                 />
                 

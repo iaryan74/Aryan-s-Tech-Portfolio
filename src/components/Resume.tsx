@@ -25,7 +25,7 @@ const Resume = () => {
 
             <a
               href="/Aryan_CV.pdf"
-              download="Md_Nayeem_Akhtar_Resume.pdf"
+              download="Aryan_Sudhanshu_Resume.pdf"
               className="btn-primary inline-flex items-center gap-2"
             >
               <Download size={20} />

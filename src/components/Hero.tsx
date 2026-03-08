@@ -103,9 +103,9 @@ const Hero = () => {
             </p>
             
             <h1 className="heading-xl mb-4 animate-fade-up animation-delay-200">
-              Md Nayeem{" "}
+              Aryan{" "}
               <span className="relative">
-                <span className="text-gradient">Akhtar</span>
+                <span className="text-gradient">Sudhanshu</span>
                 <svg 
                   className="absolute -bottom-2 left-0 w-full" 
                   viewBox="0 0 200 12" 

@@ -1,4 +1,4 @@
-import { Download, FileText } from "lucide-react";
+import { Download, FileText, ExternalLink } from "lucide-react";
 
 const Resume = () => {
   return (
@@ -23,14 +23,25 @@ const Resume = () => {
               Download my resume to learn more about my education, experience, skills, and projects.
             </p>
 
-            <a
-              href="/Aryan_CV.pdf"
-              download="Aryan_Sudhanshu_Resume.pdf"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <Download size={20} />
-              Download Resume
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="https://drive.google.com/file/d/1eBgFozLCTrmgmAf8bcxnrLtF4IJMw2Ii/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2"
+              >
+                <ExternalLink size={20} />
+                View Resume
+              </a>
+              <a
+                href="/Aryan_CV.pdf"
+                download="Aryan_Sudhanshu_Resume.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-primary text-primary font-medium hover:bg-primary/10 transition-colors"
+              >
+                <Download size={20} />
+                Download Resume
+              </a>
+            </div>
           </div>
         </div>
       </div>

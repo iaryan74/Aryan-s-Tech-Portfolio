@@ -103,9 +103,9 @@ const Hero = () => {
             </p>
             
             <h1 className="heading-xl mb-4 animate-fade-up animation-delay-200">
-              Md Nayeem{" "}
+              Aryan{" "}
               <span className="relative">
-                <span className="text-gradient">Akhtar</span>
+                <span className="text-gradient">Sudhanshu</span>
                 <svg 
                   className="absolute -bottom-2 left-0 w-full" 
                   viewBox="0 0 200 12" 
@@ -197,7 +197,7 @@ const Hero = () => {
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[450px] rounded-3xl overflow-hidden shadow-elevated border-4 border-background">
                 <img
                   src={profileImage}
-                  alt="Md Nayeem Akhtar"
+                  alt="Aryan Sudhanshu"
                   className="w-full h-full object-cover"
                 />
                 

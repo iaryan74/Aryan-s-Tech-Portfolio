@@ -1,48 +1,72 @@
 import { Code2, Database, Globe, Brain, Wrench, Users } from "lucide-react";
 
 const skillCategories = [
-  { title: "Programming Languages", icon: Code2, skills: ["C++", "Java", "JavaScript", "C"], period: "2022–Present" },
-  { title: "Web Technologies", icon: Globe, skills: ["React", "Node.js", "HTML", "CSS"], period: "2023–Present" },
-  { title: "Databases & Tools", icon: Database, skills: ["MySQL", "MongoDB", "Firebase", "Git"], period: "2023–Present" },
-  { title: "Frameworks", icon: Wrench, skills: ["Express.js", "Flutter", "Tailwind CSS"], period: "2023–Present" },
-  { title: "Data & ML", icon: Brain, skills: ["Excel", "Data Analysis", "Pivot Tables", "Visualization"], period: "2024–Present" },
-  { title: "Soft Skills", icon: Users, skills: ["Problem-Solving", "Leadership", "Time Management", "Adaptability"], period: "Always" },
+  {
+    title: "Programming Languages",
+    icon: Code2,
+    skills: ["C++", "Java", "JavaScript", "C"],
+    color: "from-primary to-accent",
+  },
+  {
+    title: "Web Technologies",
+    icon: Globe,
+    skills: ["React", "Node.js", "HTML", "CSS"],
+    color: "from-secondary to-orange-400",
+  },
+  {
+    title: "Databases & Tools",
+    icon: Database,
+    skills: ["MySQL", "MongoDB", "Firebase", "Git"],
+    color: "from-primary to-teal-400",
+  },
+  {
+    title: "Frameworks",
+    icon: Wrench,
+    skills: ["Express.js", "Flutter", "Tailwind CSS"],
+    color: "from-accent to-cyan-400",
+  },
+  {
+    title: "Data & ML",
+    icon: Brain,
+    skills: ["Excel", "Data Analysis", "Pivot Tables", "Visualization"],
+    color: "from-secondary to-amber-400",
+  },
+  {
+    title: "Soft Skills",
+    icon: Users,
+    skills: ["Problem-Solving", "Leadership", "Time Management", "Adaptability"],
+    color: "from-primary to-indigo-400",
+  },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-padding relative">
+    <section id="skills" className="section-padding">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <div className="section-label justify-center">
-            <span className="w-8 h-px bg-accent inline-block" />
-            Skills
-            <span className="w-8 h-px bg-accent inline-block" />
-          </div>
-          <h2 className="heading-lg uppercase">Experience & Skills</h2>
+        <div className="text-center mb-12">
+          <p className="text-primary font-medium mb-2">What I Can Do</p>
+          <h2 className="heading-lg">My Skills</h2>
         </div>
 
-        {/* Timeline-style skills */}
-        <div className="max-w-4xl mx-auto space-y-0">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="grid grid-cols-[100px_1fr_1fr] sm:grid-cols-[140px_1fr_1fr] gap-4 sm:gap-8 py-6 border-b border-border items-start group hover:bg-card/50 -mx-4 px-4 rounded-xl transition-all duration-300"
+              className="bg-card rounded-2xl p-6 shadow-card border border-border card-hover group"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Period */}
-              <p className="font-sans text-sm text-muted-foreground pt-1">{category.period}</p>
-
-              {/* Title with icon */}
-              <div className="flex items-center gap-3">
-                <category.icon size={18} className="text-accent shrink-0" />
-                <h3 className="font-display font-semibold text-lg">{category.title}</h3>
+              <div
+                className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${category.color} text-primary-foreground mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <category.icon size={24} />
               </div>
-
-              {/* Skills list */}
+              <h3 className="font-display font-semibold text-lg mb-4">
+                {category.title}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
-                  <span key={skill} className="font-sans text-sm text-muted-foreground">
-                    • {skill}
+                  <span key={skill} className="skill-tag">
+                    {skill}
                   </span>
                 ))}
               </div>

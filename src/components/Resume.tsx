@@ -16,7 +16,7 @@ const Resume = () => {
             </div>
             
             <h3 className="font-display font-semibold text-xl mb-4">
-              Md Nayeem Akhtar - Resume
+              Aryan Sudhanshu - Resume
             </h3>
             
             <p className="text-muted-foreground mb-8 leading-relaxed">

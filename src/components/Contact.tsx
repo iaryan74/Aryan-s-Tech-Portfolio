@@ -3,38 +3,14 @@ import { Mail, Phone, Linkedin, Github, Send, MapPin } from "lucide-react";
 import { toast } from "sonner";
 
 const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "sudhanshuaryan7749@gmail.com",
-    href: "mailto:sudhanshuaryan7749@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 6207062498",
-    href: "tel:+916207062498",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "aryan-sudhanshu",
-    href: "https://www.linkedin.com/in/aryan-sudhanshu/",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "iaryan74",
-    href: "https://github.com/iaryan74",
-  },
+  { icon: Mail, label: "Email", value: "sudhanshuaryan7749@gmail.com", href: "mailto:sudhanshuaryan7749@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 6207062498", href: "tel:+916207062498" },
+  { icon: Linkedin, label: "LinkedIn", value: "aryan-sudhanshu", href: "https://www.linkedin.com/in/aryan-sudhanshu/" },
+  { icon: Github, label: "GitHub", value: "iaryan74", href: "https://github.com/iaryan74" },
 ];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,15 +22,13 @@ const Contact = () => {
     setIsSubmitting(false);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
-    <section id="contact" className="section-padding bg-muted/30 relative">
+    <section id="contact" className="section-padding bg-muted/40 relative">
       <div className="container-custom">
         <div className="text-center mb-16">
           <div className="section-label mx-auto w-fit">Contact</div>
@@ -62,7 +36,6 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Contact Info */}
           <div>
             <h3 className="font-display font-semibold text-xl mb-4">
               Let's build something amazing together
@@ -79,9 +52,9 @@ const Contact = () => {
                   href={info.href}
                   target={info.href.startsWith("http") ? "_blank" : undefined}
                   rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-3 p-3.5 glass-card shadow-card hover:border-primary/30 transition-all duration-300 group"
+                  className="flex items-center gap-3 p-4 glass-card hover:border-primary/40 transition-all duration-300 group"
                 >
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                     <info.icon size={16} />
                   </div>
                   <div>
@@ -98,74 +71,41 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div>
-            <form
-              onSubmit={handleSubmit}
-              className="glass-card p-7 shadow-card"
-            >
+            <form onSubmit={handleSubmit} className="glass-card p-7">
               <div className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-xs font-medium mb-1.5 text-muted-foreground uppercase tracking-wider">
                     Your Name
                   </label>
                   <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
+                    type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"
                     placeholder="John Doe"
                   />
                 </div>
-
                 <div>
                   <label htmlFor="email" className="block text-xs font-medium mb-1.5 text-muted-foreground uppercase tracking-wider">
                     Your Email
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
+                    type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"
                     placeholder="john@example.com"
                   />
                 </div>
-
                 <div>
                   <label htmlFor="message" className="block text-xs font-medium mb-1.5 text-muted-foreground uppercase tracking-wider">
                     Your Message
                   </label>
                   <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
+                    id="message" name="message" value={formData.message} onChange={handleChange} required rows={4}
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none text-sm"
                     placeholder="Tell me about your project or opportunity..."
                   />
                 </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send size={16} />
-                      Send Message
-                    </>
-                  )}
+                <button type="submit" disabled={isSubmitting} className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isSubmitting ? "Sending..." : (<><Send size={16} /> Send Message</>)}
                 </button>
               </div>
             </form>

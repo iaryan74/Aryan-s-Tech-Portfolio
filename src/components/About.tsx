@@ -1,21 +1,9 @@
 import { GraduationCap, Target, Lightbulb, Users } from "lucide-react";
 
 const highlights = [
-  {
-    icon: Target,
-    title: "Problem Solver",
-    description: "Analytical approach to tackle complex challenges",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "Passionate about turning ideas into reality",
-  },
-  {
-    icon: Users,
-    title: "Team Player",
-    description: "Strong collaboration and leadership skills",
-  },
+  { icon: Target, title: "Problem Solver", description: "Analytical approach to tackle complex challenges" },
+  { icon: Lightbulb, title: "Innovation", description: "Passionate about turning ideas into reality" },
+  { icon: Users, title: "Team Player", description: "Strong collaboration and leadership skills" },
 ];
 
 const About = () => {
@@ -28,7 +16,6 @@ const About = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Content */}
           <div>
             <p className="text-base text-foreground/80 mb-5 leading-relaxed">
               I'm a tech-driven problem solver currently pursuing my B.Tech in
@@ -47,8 +34,8 @@ const About = () => {
               startup ideas.
             </p>
 
-            {/* Education Card */}
-            <div className="glass-card p-5 shadow-card">
+            {/* Education */}
+            <div className="glass-card p-5">
               <div className="flex items-start gap-4">
                 <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
                   <GraduationCap size={22} />
@@ -68,39 +55,29 @@ const About = () => {
             </div>
           </div>
 
-          {/* Highlights */}
           <div className="space-y-4">
             {highlights.map((item, index) => (
-              <div
-                key={item.title}
-                className="glass-card p-5 shadow-card card-hover"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+              <div key={item.title} className="glass-card p-5 card-hover" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground shrink-0">
+                  <div className="p-2.5 rounded-xl bg-primary text-primary-foreground shrink-0">
                     <item.icon size={20} />
                   </div>
                   <div>
-                    <h3 className="font-display font-semibold text-base mb-1">
-                      {item.title}
-                    </h3>
+                    <h3 className="font-display font-semibold text-base mb-1">{item.title}</h3>
                     <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
                 </div>
               </div>
             ))}
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-3 mt-6">
               {[
-                { value: "2+", label: "Projects", color: "text-primary" },
-                { value: "2+", label: "Years Exp.", color: "text-secondary" },
-                { value: "100+", label: "Problems", color: "text-accent" },
+                { value: "2+", label: "Projects" },
+                { value: "2+", label: "Years Exp." },
+                { value: "100+", label: "Problems" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center p-4 glass-card shadow-card">
-                  <p className={`font-display text-2xl font-bold ${stat.color}`}>
-                    {stat.value}
-                  </p>
+                <div key={stat.label} className="text-center p-4 glass-card">
+                  <p className="font-display text-2xl font-bold text-primary">{stat.value}</p>
                   <p className="text-xs text-muted-foreground mt-0.5">{stat.label}</p>
                 </div>
               ))}

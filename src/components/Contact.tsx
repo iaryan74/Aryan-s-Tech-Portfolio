@@ -40,10 +40,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
-
     toast.success("Message sent successfully! I'll get back to you soon.");
     setFormData({ name: "", email: "", message: "" });
     setIsSubmitting(false);
@@ -57,51 +54,46 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-muted/30">
+    <section id="contact" className="section-padding bg-muted/30 relative">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <p className="text-primary font-medium mb-2">Let's Connect</p>
+        <div className="text-center mb-16">
+          <div className="section-label mx-auto w-fit">Contact</div>
           <h2 className="heading-lg">Get In Touch</h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div>
-            <h3 className="font-display font-semibold text-2xl mb-6">
+            <h3 className="font-display font-semibold text-xl mb-4">
               Let's build something amazing together
             </h3>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-sm mb-8 leading-relaxed">
               I'm always excited to discuss new opportunities, collaborate on
-              projects, or just have a chat about technology. Feel free to reach
-              out!
+              projects, or just have a chat about technology.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {contactInfo.map((info) => (
                 <a
                   key={info.label}
                   href={info.href}
                   target={info.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    info.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="flex items-center gap-4 p-4 bg-card rounded-xl shadow-card border border-border hover:border-primary transition-colors group"
+                  rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-3 p-3.5 glass-card shadow-card hover:border-primary/30 transition-all duration-300 group"
                 >
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <info.icon size={20} />
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <info.icon size={16} />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{info.label}</p>
+                    <p className="font-medium text-sm">{info.value}</p>
                   </div>
                 </a>
               ))}
             </div>
 
-            <div className="mt-8 flex items-center gap-3 text-muted-foreground">
-              <MapPin size={18} />
+            <div className="mt-6 flex items-center gap-2.5 text-muted-foreground text-sm">
+              <MapPin size={14} />
               <span>Jalandhar, Punjab, India</span>
             </div>
           </div>
@@ -110,14 +102,11 @@ const Contact = () => {
           <div>
             <form
               onSubmit={handleSubmit}
-              className="bg-card rounded-2xl p-8 shadow-card border border-border"
+              className="glass-card p-7 shadow-card"
             >
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="name" className="block text-xs font-medium mb-1.5 text-muted-foreground uppercase tracking-wider">
                     Your Name
                   </label>
                   <input
@@ -127,16 +116,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="email" className="block text-xs font-medium mb-1.5 text-muted-foreground uppercase tracking-wider">
                     Your Email
                   </label>
                   <input
@@ -146,16 +132,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"
                     placeholder="john@example.com"
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="message" className="block text-xs font-medium mb-1.5 text-muted-foreground uppercase tracking-wider">
                     Your Message
                   </label>
                   <textarea
@@ -164,8 +147,8 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none text-sm"
                     placeholder="Tell me about your project or opportunity..."
                   />
                 </div>
@@ -179,7 +162,7 @@ const Contact = () => {
                     "Sending..."
                   ) : (
                     <>
-                      <Send size={18} />
+                      <Send size={16} />
                       Send Message
                     </>
                   )}

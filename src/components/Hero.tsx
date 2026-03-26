@@ -225,7 +225,7 @@ const Hero = () => {
                     <Sparkles size={20} />
                   </div>
                   <div>
-                    <p className="font-display text-2xl font-bold text-foreground">4+</p>
+                    <p className="font-display text-2xl font-bold text-foreground">5+</p>
                     <p className="text-xs text-muted-foreground">Projects</p>
                   </div>
                 </div>

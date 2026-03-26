@@ -42,6 +42,16 @@ const projects = [
     githubUrl: "https://github.com/iaryan74/ats-resume-analyzer-bot",
     demoUrl: "https://t.me/Cvchecker5Bot",
   },
+  {
+    title: "Global Recession & Layoff Tracker",
+    subtitle: "Power BI Dashboard",
+    date: "Jun 2025 – Jul 2025",
+    description:
+      "A 3-page interactive Power BI dashboard analyzing 436K+ global layoff records across industries, countries, and companies to uncover workforce trends using dynamic visualizations, slicers, and DAX calculations.",
+    techStack: ["Power BI", "DAX", "Data Modeling", "Visualization"],
+    color: "from-rose-500 to-pink-600",
+    demoUrl: "https://www.linkedin.com/posts/aryan-sudhanshu_over-the-last-few-days-ive-been-diving-activity-7406357174597365760-aQo5",
+  },
 ];
 
 const Projects = () => {

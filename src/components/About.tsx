@@ -95,7 +95,7 @@ const About = () => {
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="text-center p-4 bg-card rounded-xl shadow-card border border-border">
                 <p className="font-display text-3xl font-bold text-primary">
-                  3+
+                  4+
                 </p>
                 <p className="text-sm text-muted-foreground">Projects</p>
               </div>

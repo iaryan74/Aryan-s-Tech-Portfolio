@@ -34,7 +34,7 @@ const projects = [
   {
     title: "ATS Resume Analyzer Bot",
     subtitle: "Telegram Bot",
-    date: "2025",
+    date: "2026",
     description:
       "A smart Telegram bot that evaluates resumes against Job Descriptions using an ATS-style scoring system with 5-component weighted scoring, keyword matching, and AI-powered suggestions via Gemini.",
     techStack: ["Node.js", "Telegram", "Gemini"],

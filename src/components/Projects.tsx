@@ -102,15 +102,17 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <a 
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github size={18} />
-                    View Code
-                  </a>
+                  {project.githubUrl && (
+                    <a 
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Github size={18} />
+                      View Code
+                    </a>
+                  )}
                   {project.demoUrl ? (
                     <a 
                       href={project.demoUrl}

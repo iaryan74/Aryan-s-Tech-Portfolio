@@ -31,6 +31,17 @@ const projects = [
     color: "from-emerald-500 to-teal-600",
     githubUrl: "https://github.com/iaryan74/Election-Data-Analysis",
   },
+  {
+    title: "ATS Resume Analyzer Bot",
+    subtitle: "Telegram Bot",
+    date: "2025",
+    description:
+      "A smart Telegram bot that evaluates resumes against Job Descriptions using an ATS-style scoring system with 5-component weighted scoring, keyword matching, and AI-powered suggestions via Gemini.",
+    techStack: ["Node.js", "Telegram", "Gemini"],
+    color: "from-blue-500 to-indigo-600",
+    githubUrl: "https://github.com/iaryan74/ats-resume-analyzer-bot",
+    demoUrl: "https://t.me/Cvchecker5Bot",
+  },
 ];
 
 const Projects = () => {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { ModeToggle } from "./ModeToggle";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -51,19 +52,23 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            <ModeToggle />
             <a href="#contact" className="btn-primary text-sm py-2 px-5">
               Hire Me
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button & Dark Mode */}
+          <div className="md:hidden flex items-center gap-4">
+            <ModeToggle />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

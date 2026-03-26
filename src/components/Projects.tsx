@@ -101,10 +101,22 @@ const Projects = () => {
                     <Github size={18} />
                     View Code
                   </a>
-                  <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                    <ExternalLink size={18} />
-                    Live Demo
-                  </button>
+                  {project.demoUrl ? (
+                    <a 
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      Live Demo
+                    </a>
+                  ) : (
+                    <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                      <ExternalLink size={18} />
+                      Live Demo
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

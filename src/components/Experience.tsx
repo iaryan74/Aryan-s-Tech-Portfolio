@@ -2,15 +2,15 @@ import { Briefcase, TrendingUp, Users, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "Distribution Partner",
-    company: "Loyal Mate",
-    period: "December 2024 – Present",
+    title: "Business Development & Platform Adoption Intern",
+    company: "Loyalmate",
+    period: "August 2025 – December 2025",
     description: [
-      "Onboarded 10+ cafés and retail businesses onto the Loyal Mate platform",
-      "Increased partner adoption and customer engagement by 30%+",
-      "Maintained strong business relationships and ensured seamless onboarding",
+      "Drove onboarding of 10+ SMBs onto a digital loyalty platform, delivering a 30% uplift in customer engagement by analyzing adoption trends and iteratively refining partner outreach strategy",
+      "Collaborated cross-functionally with technology and operations teams to translate business stakeholder requirements into actionable platform implementation plans",
+      "Tracked and monitored engagement metrics post-onboarding, generating data-backed recommendations to strengthen customer retention outcomes for partner businesses",
     ],
-    techStack: ["Flutter", "Google Firebase"],
+    techStack: ["Excel", "Data Analysis", "Stakeholder Management"],
     icon: TrendingUp,
   },
   {
@@ -18,11 +18,11 @@ const experiences = [
     company: "RiteMyStory",
     period: "April 2023 – November 2024",
     description: [
-      "Led media and content strategy for the organization",
-      "Managed a creative team producing 50+ promotional assets",
-      "Boosted audience engagement and brand visibility significantly",
+      "Tracked campaign performance data using Meta Business Suite and translated insights into a measurable improvement in audience reach across multiple digital platforms",
+      "Supervised a creative team to produce 100+ visuals and promotional assets, resulting in a notable rise in audience engagement and improved brand visibility",
+      "Boosted audience engagement and brand visibility through targeted digital campaigns and posts",
     ],
-    techStack: ["Meta Business Suite", "Content Strategy"],
+    techStack: ["Meta Business Suite"],
     icon: Users,
   },
 ];

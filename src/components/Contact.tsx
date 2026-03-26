@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, Linkedin, Github, Send, MapPin } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   {
@@ -41,12 +42,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.send(
+        "service_s5xafqe",
+        "template_akynv4b",
+        {
+          from_name: formData.name,
+          to_name: "Aryan",
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        "atd0vvXTLHM35zqSF"
+      );
 
-    toast.success("Message sent successfully! I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (

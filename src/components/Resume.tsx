@@ -25,7 +25,7 @@ const Resume = () => {
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://drive.google.com/file/d/1eBgFozLCTrmgmAf8bcxnrLtF4IJMw2Ii/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1815vxvSiWcnCrBUSrv8UHAkptSHOt8qz/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { ArrowDown, Github, Linkedin, Mail, Code2, Database, Globe, Cpu, Sparkles } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Code2, Database, Globe, Cpu, Sparkles, CheckCircle2 } from "lucide-react";
 import profileImage from "@/assets/aryan-profile.jpg";
 
 const roles = [
-  "Full-Stack Developer",
-  "Data Enthusiast",
-  "Problem Solver",
-  "ML Explorer",
+  "scalable AI tools.",
+  "data-driven systems.",
+  "real-world products.",
 ];
 
 const floatingIcons = [
@@ -125,17 +124,26 @@ const Hero = () => {
             {/* Typing effect */}
             <div className="h-12 mb-6 animate-fade-up animation-delay-400">
               <p className="text-xl sm:text-2xl font-display font-semibold text-foreground/80">
-                <span className="text-muted-foreground">I'm a </span>
+                <span className="text-muted-foreground">I build </span>
                 <span className="text-primary">{displayText}</span>
                 <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse" />
               </p>
             </div>
 
-            <p className="text-foreground/70 mb-8 max-w-lg animate-fade-up animation-delay-600 text-lg leading-relaxed">
-              A passionate Computer Science student turning ideas and data into scalable,
-              impactful solutions. Experienced in data analysis, full-stack
-              development, and competitive programming.
-            </p>
+            <div className="space-y-4 mb-8 text-foreground/80 max-w-lg animate-fade-up animation-delay-600">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <p className="text-lg leading-relaxed">Built <strong>ATS Resume Analyzer</strong> (Telegram bot with real users)</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <p className="text-lg leading-relaxed"><strong>1st place</strong> - Cipher Schools Coding Contest</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary shrink-0 mt-1" size={20} />
+                <p className="text-lg leading-relaxed">Experience in data analysis, AI tools, and product development</p>
+              </div>
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-10 animate-fade-up animation-delay-600">
@@ -144,7 +152,7 @@ const Hero = () => {
                 <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
               </a>
               <a href="#contact" className="btn-outline group">
-                <span>Contact Me</span>
+                <span>Hire Me</span>
                 <Mail size={18} className="group-hover:scale-110 transition-transform" />
               </a>
             </div>

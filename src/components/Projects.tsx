@@ -1,153 +1,225 @@
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Note Sphere",
-    subtitle: "Note Taking Application",
-    date: "July 2025",
-    description:
-      "A secure MERN-based note-taking application with authentication, data storage, and responsive UI for seamless cross-device experience.",
-    techStack: ["MongoDB", "Express.js", "React", "Node.js"],
-    color: "from-primary to-accent",
-    githubUrl: "https://github.com/iaryan74/NoteSphere",
-  },
-  {
-    title: "Marriage Patterns Analysis",
-    subtitle: "Data Visualization Dashboard",
-    date: "January 2025",
-    description:
-      "Interactive Excel dashboard for analyzing marriage patterns and marital outcomes using Pivot Tables, Charts, Slicers, and Conditional Formatting.",
-    techStack: ["Excel", "Data Analysis", "Visualization"],
-    color: "from-secondary to-orange-400",
-    githubUrl: "https://github.com/iaryan74/Marriage-Patterns-Analysis",
-  },
-  {
     title: "Election Data Analysis",
-    subtitle: "Data Analysis & Visualization",
+    subtitle: "Data Analytics & Impact",
     date: "April 2025",
-    description:
-      "In-depth analysis of a synthetic Indian election dataset to uncover insights about voter behavior, party performance, and regional election outcomes using Python.",
-    techStack: ["Python", "Data Analysis", "CSV", "Visualization"],
-    color: "from-emerald-500 to-teal-600",
+    problem: "Understanding voter behavior, party performance, and regional trends accurately from complex datasets.",
+    solution: "Performed Exploratory Data Analysis (EDA) on synthetic Indian election datasets and built visual insights.",
+    impact: "Clearly identified turnout patterns, constituency trends, and key party performance metrics.",
+    techStack: ["Python", "Pandas", "NumPy", "Seaborn", "Matplotlib"],
     githubUrl: "https://github.com/iaryan74/Election-Data-Analysis",
-  },
-  {
-    title: "ATS Resume Analyzer Bot",
-    subtitle: "Telegram Bot",
-    date: "2026",
-    description:
-      "A smart Telegram bot that evaluates resumes against Job Descriptions using an ATS-style scoring system with 5-component weighted scoring, keyword matching, and AI-powered suggestions via Gemini.",
-    techStack: ["Node.js", "Telegram", "Gemini"],
-    color: "from-blue-500 to-indigo-600",
-    githubUrl: "https://github.com/iaryan74/ats-resume-analyzer-bot",
-    demoUrl: "https://t.me/Cvchecker5Bot",
+    featured: true,
   },
   {
     title: "Global Recession & Layoff Tracker",
-    subtitle: "Power BI Dashboard",
+    subtitle: "Interactive Power BI Dashboard",
     date: "Jun 2025 – Jul 2025",
-    description:
-      "A 3-page interactive Power BI dashboard analyzing 436K+ global layoff records across industries, countries, and companies to uncover workforce trends using dynamic visualizations, slicers, and DAX calculations.",
+    problem: "Lack of highly structured, accessible insights into global layoffs across various industries.",
+    solution: "Built a 3-page interactive Power BI dashboard analyzing over 436K+ global layoff records.",
+    impact: "Enabled intuitive exploration of workforce trends by industry, region, and time period.",
     techStack: ["Power BI", "DAX", "Data Modeling", "Visualization"],
-    color: "from-rose-500 to-pink-600",
     demoUrl: "https://www.linkedin.com/posts/aryan-sudhanshu_over-the-last-few-days-ive-been-diving-activity-7406357174597365760-aQo5",
+    featured: true,
+  },
+  {
+    title: "ATS Resume Analyzer Bot",
+    subtitle: "AI-Powered Telegram Tool",
+    date: "2026",
+    problem: "Students and professionals lack immediate, ATS-focused feedback on their resume quality.",
+    solution: "Built a Telegram bot for real-time ATS scoring, keyword matching, and AI suggestions via Gemini.",
+    impact: "Successfully deployed and gained real user adoption, providing instant, actionable resume feedback.",
+    techStack: ["Node.js", "Telegram API", "Gemini AI"],
+    githubUrl: "https://github.com/iaryan74/ats-resume-analyzer-bot",
+    demoUrl: "https://t.me/Cvchecker5Bot",
+    featured: true,
+  },
+  {
+    title: "Note Sphere",
+    subtitle: "Full-stack Application",
+    date: "July 2025",
+    problem: "Need for a secure, cross-device platform to organize personal notes efficiently.",
+    solution: "Developed a MERN-based app with secure authentication architectures and robust data storage.",
+    impact: "Provided a seamless, responsive UI for consistent cross-device note management.",
+    techStack: ["MongoDB", "Express.js", "React", "Node.js"],
+    githubUrl: "https://github.com/iaryan74/NoteSphere",
+    featured: false,
+  },
+  {
+    title: "Marriage Patterns Analysis",
+    subtitle: "Excel Dashboard",
+    date: "January 2025",
+    problem: "Difficulty in visualizing and correlating marital outcomes with demographics.",
+    solution: "Created an interactive Excel dashboard utilizing Pivot Tables, Slicers, and Conditional Formatting.",
+    impact: "Synthesized raw data into easily digestible, dynamic charts highlighting key demographic patterns.",
+    techStack: ["Excel", "Data Analysis", "Visualization"],
+    githubUrl: "https://github.com/iaryan74/Marriage-Patterns-Analysis",
+    featured: false,
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding bg-muted/30">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <p className="text-primary font-medium mb-2">My Work</p>
-          <h2 className="heading-lg">Featured Projects</h2>
+        <div className="text-center mb-16 md:mb-24">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-accent font-medium mb-3 tracking-wide uppercase text-sm"
+          >
+            Case Studies
+          </motion.p>
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="heading-lg"
+          >
+            Featured Projects
+          </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex flex-col gap-16 md:gap-24 max-w-5xl mx-auto"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={project.title}
-              className="bg-card rounded-2xl overflow-hidden shadow-card border border-border card-hover group"
+              variants={itemVariants}
+              className="bg-card rounded-3xl overflow-hidden shadow-card border border-border/60 card-hover group"
             >
-              {/* Project header */}
-              <div
-                className={`h-48 bg-gradient-to-br ${project.color} p-6 flex items-end relative overflow-hidden`}
-              >
-                <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <Folder size={120} />
+              <div className="grid md:grid-cols-12 gap-0 overflow-hidden">
+                {/* Project Header Area */}
+                <div className="md:col-span-5 bg-muted/20 p-8 md:p-10 border-b md:border-b-0 md:border-r border-border/60 flex flex-col justify-center relative overflow-hidden group-hover:bg-muted/30 transition-colors">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-[hsl(240,100%,70%)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  
+                  <div className="relative z-10">
+                    <p className="text-accent text-sm font-semibold mb-3 tracking-wide uppercase">
+                      {project.date}
+                    </p>
+                    <h3 className="font-display font-bold text-3xl text-foreground mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-foreground/60 font-medium mb-8">{project.subtitle}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.techStack.map((tech) => (
+                        <span key={tech} className="skill-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-4 mt-auto">
+                      {project.githubUrl && (
+                        <a 
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-3 rounded-full bg-background border border-border shadow-sm hover:border-accent hover:text-accent transition-all hover:scale-105"
+                          title="View Source Code"
+                        >
+                          <Github size={18} />
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a 
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-3 rounded-full bg-foreground text-background shadow-md hover:bg-accent transition-all flex items-center gap-2 hover:scale-105"
+                          title="View Live Demo"
+                        >
+                          <ExternalLink size={18} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div className="relative z-10">
-                  <p className="text-primary-foreground/80 text-sm mb-1">
-                    {project.date}
-                  </p>
-                  <h3 className="font-display font-bold text-2xl text-primary-foreground">
-                    {project.title}
-                  </h3>
-                  <p className="text-primary-foreground/80">{project.subtitle}</p>
+
+                {/* Case Study Details Area */}
+                <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-center bg-card">
+                  <div className="space-y-8">
+                    {/* Problem */}
+                    <div>
+                      <h4 className="flex items-center gap-2 text-foreground font-semibold mb-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                        The Problem
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed text-sm md:text-base">
+                        {project.problem}
+                      </p>
+                    </div>
+
+                    {/* Solution */}
+                    <div>
+                      <h4 className="flex items-center gap-2 text-foreground font-semibold mb-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        The Solution
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed text-sm md:text-base">
+                        {project.solution}
+                      </p>
+                    </div>
+
+                    {/* Impact */}
+                    <div>
+                      <h4 className="flex items-center gap-2 text-foreground font-semibold mb-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                        The Impact
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed text-sm md:text-base flex items-start gap-2">
+                        <CheckCircle2 size={18} className="text-green-500 shrink-0 mt-0.5" />
+                        <span>{project.impact}</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              {/* Project content */}
-              <div className="p-6">
-                <p className="text-foreground/70 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.techStack.map((tech) => (
-                    <span key={tech} className="skill-tag text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-4">
-                  {project.githubUrl && (
-                    <a 
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github size={18} />
-                      View Code
-                    </a>
-                  )}
-                  {project.demoUrl ? (
-                    <a 
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <ExternalLink size={18} />
-                      Live Demo
-                    </a>
-                  ) : (
-                    <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                      <ExternalLink size={18} />
-                      Live Demo
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Services Note */}
-        <div className="mt-16 text-center max-w-2xl mx-auto">
-          <div className="bg-card rounded-2xl p-8 shadow-card border border-border">
-            <h3 className="font-display font-semibold text-xl mb-4">
-              Open to Opportunities
-            </h3>
-            <p className="text-muted-foreground">
-              Currently focused on learning, building projects, and gaining
-              experience. Open to internships, collaborations, and exciting
-              opportunities in tech!
-            </p>
-          </div>
-        </div>
+        {/* Call to action */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24 text-center"
+        >
+          <a href="https://github.com/iaryan74" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-foreground/80 hover:text-accent font-medium transition-colors border-b border-transparent hover:border-accent pb-1">
+            Explore more on GitHub
+            <ArrowRight size={16} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
